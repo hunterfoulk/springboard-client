@@ -2,7 +2,6 @@ import axios from "axios";
 import { ThreadContext } from "../context/contexts/threadContext";
 import { SearchContext } from "../context/contexts/searchContext";
 import { useContext } from 'react';
-require("dotenv").config();
 
 
 export default function CategoryActions() {
@@ -10,14 +9,14 @@ export default function CategoryActions() {
     const { dispatch: searchDispatch, searchData } = useContext(SearchContext);
 
     async function getCategories() {
-        const response = await axios.get(process.env.PROD_URL_ONE)
+        const response = await axios.get("https://springboard-server.herokuapp.com/all")
         let data = response.data
         return data;
     }
 
     async function createThread(payload) {
         await axios
-            .post(process.env.PROD_URL_SIX, {
+            .post("http://localhost:8000/createThread", {
                 title: payload.title,
                 body: payload.body,
                 category: payload.category,
@@ -33,7 +32,7 @@ export default function CategoryActions() {
         try {
             console.log("fired", term)
 
-            const response = await axios.get(process.env.PROD_URL_TWO, { params: { term: term } });
+            const response = await axios.get("http://localhost:8000/fetchThreads", { params: { term: term } });
             let threads = response.data
 
             threadDispatch({ type: 'UPDATE_THREADS', threads: threads });
@@ -47,7 +46,7 @@ export default function CategoryActions() {
 
         try {
             console.log("IMAGE fired")
-            const response = await axios.get(process.env.PROD_URL_THREE, { params: { term: term } });
+            const response = await axios.get("http://localhost:8000/fetchCategoryImage", { params: { term: term } });
             let header = response.data
             console.log("HEADER", header)
             return header
@@ -63,7 +62,7 @@ export default function CategoryActions() {
         try {
             console.log("fired term ", term)
 
-            const response = await axios.get(process.env.PROD_URL_FOUR, { params: { term: term } });
+            const response = await axios.get("http://localhost:8000/fetchRecents", { params: { term: term } });
             let recents = response.data
             return recents
 
@@ -78,7 +77,7 @@ export default function CategoryActions() {
         try {
             console.log("FETCH THREAD FIRED", id)
 
-            const response = await axios.get(process.env.PROD_URL_FIVE, { params: { id: id } });
+            const response = await axios.get("http://localhost:8000/fetchThread", { params: { id: id } });
             let recents = response.data
             return recents
 
@@ -91,7 +90,7 @@ export default function CategoryActions() {
 
     async function createComment(payload) {
         await axios
-            .post(process.env.PROD_URL_EIGHT, {
+            .post("http://localhost:8000/createComment", {
                 message: payload.comment,
                 thread_id: payload.thread_id
             })
@@ -104,7 +103,7 @@ export default function CategoryActions() {
 
     async function createReply(payload) {
         await axios
-            .post(process.env.PROD_URL_EIGHT, {
+            .post("http://localhost:8000/createReply", {
                 message: payload.message,
                 comment_id: payload.comment_id,
                 id: payload.thread_id
@@ -125,7 +124,7 @@ export default function CategoryActions() {
         try {
             console.log("trending dropdown fired")
 
-            const response = await axios.get(process.env.PROD_URL_TEN)
+            const response = await axios.get("http://localhost:8000/fetchTrends")
             let trendings = response.data
             return trendings
 
@@ -141,7 +140,7 @@ export default function CategoryActions() {
         try {
             console.log("term", term)
 
-            const response = await axios.get(`${process.env.PROD_URL}/search`, { params: { term: term } });
+            const response = await axios.get("http://localhost:8000/search", { params: { term: term } });
             searchDispatch({ type: 'SET_SEARCH_RESULTS', searchResults: response.data });
 
 
