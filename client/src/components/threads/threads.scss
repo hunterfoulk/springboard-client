@@ -1,0 +1,271 @@
+.thread-light {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  // min-width: 100%;
+  // width: 70%;
+  max-width: 1200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 18px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  // background-color: orange;
+  .user-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 13px;
+    .image-container {
+      height: 22px;
+      display: flex;
+      width: 23px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgb(247, 247, 247);
+      margin-right: 5px;
+      position: relative;
+      top: 1.5px;
+      border: 1.5px solid rgb(215, 46, 51);
+      img {
+        height: 65%;
+        width: 100%;
+      }
+    }
+    // background-color: green;
+    margin-bottom: 5px;
+    height: 15%;
+    span {
+      margin-right: 6px;
+    }
+  }
+  .thread-title {
+    // background-color: yellow;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 5px 8px 5px;
+    span {
+      font-size: 20px;
+    }
+  }
+  .thread-body {
+    display: flex;
+    // content: "";
+    // position: absolute;
+    // box-shadow: inset 0 -80px 57px -72px #fff;
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+    overflow: hidden;
+    padding: 5px 8px 10px;
+
+    height: 50%;
+    // background-color: red;
+    margin-bottom: 15px;
+    p {
+      font-size: 15.5px;
+    }
+  }
+  .thread-buttons {
+    display: flex;
+    align-items: center;
+
+    span:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: rgb(212, 212, 212);
+    width: 90px;
+    // height: 60px;
+    margin-left: 115px;
+    margin-top: 211px;
+    // margin-right: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    z-index: 10;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.747);
+    background-color: rgb(240, 240, 240);
+    color: black;
+    overflow: hidden;
+    cursor: default;
+  }
+  .copy-span {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+  }
+  .copy-span:hover {
+    background-color: rgb(206, 206, 206);
+  }
+}
+
+.thread-light:hover {
+  border: 1px solid rgba(199, 199, 199, 0.445);
+  cursor: pointer;
+}
+
+.thread-dark {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  // min-width: 100%;
+  width: 100%;
+  // max-width: 1200px;
+  height: 210px;
+  background-color: #1a1a1b;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 18px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  // background-color: orange;
+  color: #d7dadc;
+  border: 1px solid rgba(128, 128, 128, 0.233);
+  .user-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 13px;
+    .image-container {
+      height: 22px;
+      display: flex;
+      width: 23px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgb(247, 247, 247);
+      margin-right: 5px;
+      position: relative;
+      top: 1.5px;
+      border: 1.5px solid rgb(215, 46, 51);
+      img {
+        height: 65%;
+        width: 100%;
+      }
+    }
+    // background-color: green;
+    margin-bottom: 5px;
+    height: 15%;
+    span {
+      margin-right: 6px;
+    }
+  }
+  .thread-title {
+    // background-color: yellow;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 5px 8px 10px;
+    span {
+      font-size: 20px;
+    }
+  }
+  .thread-body {
+    display: flex;
+    // content: "";
+    // position: absolute;
+    // box-shadow: inset 0 -80px 57px -72px #fff;
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+    mask-image: linear-gradient(180deg, #000 60%, transparent);
+    overflow: hidden;
+    padding: 5px 8px 10px;
+
+    height: 50%;
+    // background-color: red;
+    margin-bottom: 15px;
+    p {
+      font-size: 17px;
+    }
+  }
+  .thread-buttons {
+    display: flex;
+    align-items: center;
+
+    span:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: rgb(212, 212, 212);
+    width: 90px;
+    // height: 60px;
+    margin-left: 115px;
+    margin-top: 211px;
+    // margin-right: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    z-index: 10;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.747);
+    background-color: rgb(240, 240, 240);
+    color: black;
+    overflow: hidden;
+    cursor: default;
+  }
+  .copy-span {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+  }
+  .copy-span:hover {
+    background-color: rgb(206, 206, 206);
+  }
+}
+
+.thread-dark:hover {
+  border: 1px solid rgba(199, 199, 199, 0.205);
+  cursor: pointer;
+}
+.thread-light:hover {
+  border: 1px solid rgba(199, 199, 199, 0.445);
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .thread-dark {
+    width: 100%;
+    // background-color: red;
+    // font-size: 12px;
+    .user-container {
+      // background-color: red;
+      .date {
+        // font-size: 9px;
+        width: 30%;
+      }
+    }
+  }
+
+  .thread-light {
+    width: 100%;
+    // background-color: red;
+    // font-size: 12px;
+    .user-container {
+      // background-color: red;
+      .date {
+        // font-size: 9px;
+        width: 30%;
+      }
+    }
+  }
+}

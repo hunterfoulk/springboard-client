@@ -1,0 +1,286 @@
+.comment-light {
+  display: flex;
+  flex-direction: column;
+  // background-color: grey;
+  border-left: 1px solid rgb(185, 185, 185);
+  padding-left: 5px;
+  margin-bottom: 50px;
+  .comment-user {
+    display: flex;
+    span {
+      margin-right: 5px;
+      font-size: 13px;
+    }
+  }
+  .comment-body {
+    // background-color: yellow;
+    font-family: Noto Sans, Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .comment-button-bar {
+    // background-color: green;
+    span:hover {
+      text-decoration: underline;
+    }
+  }
+  .reply-container {
+    display: flex;
+    flex-direction: column;
+    // background-color: green;
+    border: 1px solid silver;
+    min-height: 170px;
+    border-radius: 3px;
+    margin-top: 20px;
+    textarea {
+      display: flex;
+      //   flex: 2;
+      resize: vertical;
+      padding-left: 3px;
+      min-height: 150px;
+      border: none;
+      outline: none;
+    }
+    .reply-button-container {
+      display: flex;
+      justify-content: flex-end;
+      height: 23px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      align-items: center;
+      background-color: rgba(226, 226, 226, 0.459);
+      .reply-button {
+        margin-right: 10px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(246.35deg, #d72e33 0%, #a82455 100%);
+        height: 25px;
+        width: 70px;
+        cursor: pointer;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #d72e33;
+        border-radius: 3px;
+        color: white;
+        font-weight: 500;
+        outline: none;
+        margin-top: 0px;
+      }
+      span {
+        margin-right: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        cursor: default;
+      }
+      span:hover {
+        text-decoration: underline;
+      }
+      .reply-button:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .replies-container {
+    display: flex;
+    // background-color: green;
+    margin-top: 15px;
+    flex-direction: column;
+
+    .reply:nth-child(1) {
+      // color: red;
+    }
+    .reply:nth-child(2) {
+      position: relative;
+      left: 22px;
+    }
+    .reply:nth-child(3) {
+      position: relative;
+      left: 42px;
+    }
+    .reply:nth-child(4) {
+      position: relative;
+      left: 62px;
+    }
+    .reply:nth-child(5) {
+      position: relative;
+      left: 82px;
+    }
+    .reply:nth-child(6) {
+      position: relative;
+      left: 102px;
+    }
+    .reply {
+      border-left: 1px solid rgb(185, 185, 185);
+      display: flex;
+      flex-direction: column;
+      // margin-left: 3px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      padding-bottom: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+      margin-left: 3em;
+
+      // background-color: yellow;
+      .reply-user {
+        span {
+          margin-right: 5px;
+          font-size: 12px;
+        }
+      }
+      .reply-body {
+        font-family: Noto Sans, Arial, sans-serif;
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.comment-dark {
+  display: flex;
+  flex-direction: column;
+  // background-color: grey;
+  border-left: 1px solid rgb(185, 185, 185);
+  padding-left: 5px;
+  margin-bottom: 50px;
+  .comment-user {
+    display: flex;
+    span {
+      margin-right: 5px;
+      font-size: 13px;
+    }
+  }
+  .comment-body {
+    // background-color: yellow;
+    font-family: Noto Sans, Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .comment-button-bar {
+    // background-color: green;
+    span:hover {
+      text-decoration: underline;
+    }
+  }
+  .reply-container {
+    display: flex;
+    flex-direction: column;
+    // background-color: green;
+    border: 1px solid silver;
+    min-height: 170px;
+    border-radius: 3px;
+    margin-top: 20px;
+    textarea {
+      display: flex;
+      //   flex: 2;
+      resize: vertical;
+      padding-left: 3px;
+      min-height: 150px;
+      border: none;
+      outline: none;
+      background-color: #1a1a1b;
+      color: #a2a6aa;
+    }
+    .reply-button-container {
+      display: flex;
+      justify-content: flex-end;
+      height: 23px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      align-items: center;
+      // background-color: rgba(226, 226, 226, 0.459);
+      border-top: 1px solid grey;
+      .reply-button {
+        margin-right: 10px;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(246.35deg, #d72e33 0%, #a82455 100%);
+        height: 25px;
+        width: 70px;
+        cursor: pointer;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #d72e33;
+        border-radius: 3px;
+        color: white;
+        font-weight: 500;
+        outline: none;
+        margin-top: 0px;
+      }
+      span {
+        margin-right: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        cursor: default;
+      }
+      span:hover {
+        text-decoration: underline;
+      }
+      .reply-button:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .replies-container {
+    display: flex;
+    // background-color: green;
+    margin-top: 15px;
+    flex-direction: column;
+
+    .reply:nth-child(1) {
+      // color: red;
+    }
+    .reply:nth-child(2) {
+      position: relative;
+      left: 22px;
+    }
+    .reply:nth-child(3) {
+      position: relative;
+      left: 42px;
+    }
+    .reply:nth-child(4) {
+      position: relative;
+      left: 62px;
+    }
+    .reply:nth-child(5) {
+      position: relative;
+      left: 82px;
+    }
+    .reply:nth-child(6) {
+      position: relative;
+      left: 102px;
+    }
+    .reply {
+      border-left: 1px solid rgb(185, 185, 185);
+      display: flex;
+      flex-direction: column;
+      // margin-left: 3px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      padding-bottom: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+      margin-left: 3em;
+
+      // background-color: yellow;
+      .reply-user {
+        span {
+          margin-right: 5px;
+          font-size: 12px;
+        }
+      }
+      .reply-body {
+        font-family: Noto Sans, Arial, sans-serif;
+        font-size: 14px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

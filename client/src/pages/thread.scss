@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200&display=swap");
+
+.current-thread-main-light {
+  display: flex;
+  // height: 100vh;
+  width: 70%;
+  max-width: 1200px;
+  // background-color: red;
+  padding: 0px 5px;
+  .current-thread-main-left {
+    display: flex;
+    width: 65%;
+    // background-color: rgb(118, 119, 118);
+    .current-thread {
+      display: flex;
+      flex-direction: column;
+      background-color: yellow;
+      background-color: white;
+      // height: 300px;
+      height: fit-content;
+      width: 100%;
+      // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      padding: 0px 15px;
+      // box-shadow: inset 1.3px 1.3px 8px #5f5f5f38;
+      box-shadow: inset 1.5px 1.2px 10px -3px #66666644;
+      font-family: "IBM Plex Sans", sans-serif;
+      border-radius: 3px;
+      border: 1px solid #4141412a;
+      .current-thread-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 25px;
+        padding: 10px;
+        font-size: 12px;
+        .date {
+          margin-left: 6px;
+        }
+        .current-image-container {
+          display: flex;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          width: 18px;
+          height: 15px;
+          padding: 5px 3px;
+          border: 1px solid black;
+          border-radius: 50%;
+          right: 10px;
+          top: 2px;
+          margin-left: 5px;
+
+          img {
+            width: 80%;
+            position: relative;
+            //   right: 10px;
+          }
+        }
+      }
+      .current-title-container {
+        display: flex;
+        // background-color: yellow;
+        padding: 5px;
+        span {
+          font-size: 22px;
+          font-weight: 600;
+          // margin-left: 30px;
+        }
+      }
+      .current-body-container {
+        display: flex;
+        // background-color: rgb(150, 118, 118);
+        padding: 5px;
+        font-family: Noto Sans, Arial, sans-serif;
+      }
+      .current-bottom-bar {
+        display: flex;
+        padding: 10px 5px;
+        cursor: default;
+        margin-top: 15px;
+        border-bottom: 1px solid rgba(214, 214, 214, 0.678);
+
+        span:nth-child(5):hover {
+          text-decoration: underline;
+        }
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // background-color: rgb(212, 212, 212);
+          width: 90px;
+          // height: 60px;
+          margin-left: 115px;
+          // margin-top: 111px;
+          margin-top: 20px;
+          // margin-right: 50px;
+          border: 1px solid rgba(0, 0, 0, 0.37);
+          z-index: 10;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.747);
+          background-color: rgb(240, 240, 240);
+          color: black;
+          overflow: hidden;
+          cursor: default;
+          // color: red;
+        }
+        .copy-span {
+          text-align: center;
+          padding-top: 5px;
+          padding-bottom: 6px;
+          width: 100%;
+          border-bottom: 1px solid grey;
+        }
+        .copy-span:hover {
+          background-color: rgb(206, 206, 206);
+        }
+      }
+      .create-comment-container {
+        display: flex;
+        width: 100%;
+        // background-color: grey;
+        margin-top: 10px;
+        .create-comment-form {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          // padding: 8px 16px;
+          .comment-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+          }
+          textarea {
+            outline: none;
+            user-select: text;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            font-family: Noto Sans, Arial, sans-serif;
+            min-height: 122px;
+            overflow: hidden;
+            resize: vertical;
+            width: 98.8%;
+            // padding-left: 6px;
+            word-break: break-word;
+            border: 1px solid rgb(192, 192, 192);
+            padding-left: 5px;
+            padding-top: 3px;
+          }
+        }
+      }
+    }
+    .thread-comment-container {
+      display: flex;
+      flex-direction: column;
+      // background-color: Red;
+      height: auto;
+      // border-left: 1px solid rgb(185, 185, 185);
+      // margin-right: 10px;
+      padding: 5px 0px;
+      padding-left: 5px;
+      margin-top: 20px;
+    }
+  }
+  .current-thread-main-right {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 35%;
+    height: 100vh;
+    // background-color: rgb(99, 87, 119);
+  }
+}
+
+.current-thread-main-dark {
+  display: flex;
+  // height: 100vh;
+  width: 70%;
+  max-width: 1200px;
+  // background-color: red;
+
+  padding: 0px 5px;
+  .current-thread-main-left {
+    display: flex;
+    width: 65%;
+    // background-color: rgb(118, 119, 118);
+    .current-thread {
+      display: flex;
+      flex-direction: column;
+      // background-color: yellow;
+      // background-color: white;
+      background-color: #1a1a1b;
+      color: #a2a6aa;
+
+      // height: 300px;
+      height: fit-content;
+      width: 100%;
+      // box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      padding: 0px 15px;
+      // box-shadow: inset 1.3px 1.3px 8px #5f5f5f38;
+      box-shadow: inset 1.5px 1.2px 10px -3px #66666644;
+      font-family: "IBM Plex Sans", sans-serif;
+      border-radius: 3px;
+      // border: 1px solid #4141412a;
+      border: 1px solid rgba(128, 128, 128, 0.233);
+
+      .current-thread-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 25px;
+        padding: 10px;
+        font-size: 12px;
+        .date {
+          margin-left: 6px;
+        }
+        .current-image-container {
+          display: flex;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          width: 18px;
+          height: 15px;
+          padding: 5px 3px;
+          border: 1px solid #d72e33;
+          background-color: white;
+          border-radius: 50%;
+          right: 10px;
+          top: 2px;
+          margin-left: 5px;
+
+          img {
+            width: 80%;
+            position: relative;
+            //   right: 10px;
+          }
+        }
+      }
+      .current-title-container {
+        display: flex;
+        // background-color: yellow;
+        padding: 5px;
+        span {
+          font-size: 22px;
+          font-weight: 600;
+          // margin-left: 30px;
+        }
+      }
+      .current-body-container {
+        display: flex;
+        // background-color: rgb(150, 118, 118);
+        padding: 5px;
+        font-family: Noto Sans, Arial, sans-serif;
+      }
+      .current-bottom-bar {
+        display: flex;
+        padding: 10px 5px;
+        cursor: default;
+        margin-top: 15px;
+        border-bottom: 1px solid rgba(214, 214, 214, 0.678);
+
+        span:nth-child(5):hover {
+          text-decoration: underline;
+        }
+
+        .dropdown {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          // background-color: rgb(212, 212, 212);
+          width: 90px;
+          // height: 60px;
+          margin-left: 115px;
+          // margin-top: 111px;
+          margin-top: 20px;
+          // margin-right: 50px;
+          border: 1px solid rgba(0, 0, 0, 0.37);
+          z-index: 10;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.747);
+          background-color: rgb(240, 240, 240);
+          color: black;
+          overflow: hidden;
+          cursor: default;
+          // color: red;
+        }
+        .copy-span {
+          text-align: center;
+          padding-top: 5px;
+          padding-bottom: 6px;
+          width: 100%;
+          border-bottom: 1px solid grey;
+        }
+        .copy-span:hover {
+          background-color: rgb(206, 206, 206);
+        }
+      }
+      .create-comment-container {
+        display: flex;
+        width: 100%;
+        // background-color: grey;
+        margin-top: 10px;
+        .create-comment-form {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          // padding: 8px 16px;
+          .comment-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+          }
+          textarea {
+            outline: none;
+            user-select: text;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            font-family: Noto Sans, Arial, sans-serif;
+            min-height: 122px;
+            overflow: hidden;
+            resize: vertical;
+            width: 98.8%;
+            // padding-left: 6px;
+            word-break: break-word;
+            border: 1px solid rgb(192, 192, 192);
+            background-color: #1a1a1b;
+            color: #a2a6aa;
+            padding-left: 5px;
+            padding-top: 3px;
+          }
+        }
+      }
+    }
+    .thread-comment-container {
+      display: flex;
+      flex-direction: column;
+      // background-color: Red;
+      height: auto;
+      // border-left: 1px solid rgb(185, 185, 185);
+      // margin-right: 10px;
+      padding: 5px 0px;
+      padding-left: 5px;
+      margin-top: 20px;
+    }
+  }
+  .current-thread-main-right {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 35%;
+    height: 100vh;
+    // background-color: rgb(99, 87, 119);
+  }
+}
+
+@media (max-width: 1450px) {
+  .current-thread-main-dark {
+    // background-color: green;
+    width: 90%;
+  }
+
+  .current-thread-main-light {
+    // background-color: green;
+    width: 90%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .current-thread-main-dark {
+    // background-color: green;
+    width: 90%;
+    justify-content: center;
+    .current-thread-main-left {
+      width: 100%;
+    }
+    .current-thread-main-right {
+      display: none;
+    }
+  }
+
+  .current-thread-main-light {
+    // background-color: green;
+    width: 90%;
+
+    .current-thread-main-left {
+      width: 100%;
+    }
+    .current-thread-main-right {
+      display: none;
+    }
+  }
+}
