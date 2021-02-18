@@ -2,6 +2,7 @@ import axios from "axios";
 import { ThreadContext } from "../context/contexts/threadContext";
 import { SearchContext } from "../context/contexts/searchContext";
 import { useContext } from 'react';
+require("dotenv").config();
 
 
 export default function CategoryActions() {
