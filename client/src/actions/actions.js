@@ -9,14 +9,14 @@ export default function CategoryActions() {
     const { dispatch: searchDispatch, searchData } = useContext(SearchContext);
 
     async function getCategories() {
-        const response = await axios.get(process.env.PROD_URL / "all")
+        const response = await axios.get(`${process.env.PROD_URL}/all`)
         let data = response.data
         return data;
     }
 
     async function createThread(payload) {
         await axios
-            .post(process.env.PROD_URL / "createThread", {
+            .post(`${process.env.PROD_URL}/createThread`, {
                 title: payload.title,
                 body: payload.body,
                 category: payload.category,
@@ -32,7 +32,7 @@ export default function CategoryActions() {
         try {
             console.log("fired", term)
 
-            const response = await axios.get(process.env.PROD_URL / "fetchThreads", { params: { term: term } });
+            const response = await axios.get(`${process.env.PROD_URL}/fetchThreads`, { params: { term: term } });
             let threads = response.data
 
             threadDispatch({ type: 'UPDATE_THREADS', threads: threads });
@@ -46,7 +46,7 @@ export default function CategoryActions() {
 
         try {
             console.log("IMAGE fired")
-            const response = await axios.get(process.env.PROD_URL / "fetchCategoryImage", { params: { term: term } });
+            const response = await axios.get(`${process.env.PROD_URL}/fetchCategoryImage`, { params: { term: term } });
             let header = response.data
             console.log("HEADER", header)
             return header
@@ -62,7 +62,7 @@ export default function CategoryActions() {
         try {
             console.log("fired term ", term)
 
-            const response = await axios.get(process.env.PROD_URL / "fetchRecents", { params: { term: term } });
+            const response = await axios.get(`${process.env.PROD_URL}/fetchRecents`, { params: { term: term } });
             let recents = response.data
             return recents
 
@@ -77,7 +77,7 @@ export default function CategoryActions() {
         try {
             console.log("FETCH THREAD FIRED", id)
 
-            const response = await axios.get(process.env.PROD_URL / "fetchThread", { params: { id: id } });
+            const response = await axios.get(`${process.env.PROD_URL}/fetchThread`, { params: { id: id } });
             let recents = response.data
             return recents
 
@@ -90,7 +90,7 @@ export default function CategoryActions() {
 
     async function createComment(payload) {
         await axios
-            .post(process.env.PROD_URL / "createComment", {
+            .post(`${process.env.PROD_URL}/createComment`, {
                 message: payload.comment,
                 thread_id: payload.thread_id
             })
@@ -103,7 +103,7 @@ export default function CategoryActions() {
 
     async function createReply(payload) {
         await axios
-            .post(process.env.PROD_URL / "createReply", {
+            .post(`${process.env.PROD_URL}/createReply`, {
                 message: payload.message,
                 comment_id: payload.comment_id,
                 id: payload.thread_id
@@ -124,7 +124,7 @@ export default function CategoryActions() {
         try {
             console.log("trending dropdown fired")
 
-            const response = await axios.get(process.env.PROD_URL / "fetchTrends")
+            const response = await axios.get(`${process.env.PROD_URL}/fetchTrends`)
             let trendings = response.data
             return trendings
 
@@ -140,7 +140,7 @@ export default function CategoryActions() {
         try {
             console.log("term", term)
 
-            const response = await axios.get(process.env.PROD_URL / "search", { params: { term: term } });
+            const response = await axios.get(`${process.env.PROD_URL}/search`, { params: { term: term } });
             searchDispatch({ type: 'SET_SEARCH_RESULTS', searchResults: response.data });
 
 
