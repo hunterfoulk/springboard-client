@@ -9,7 +9,7 @@ export default function CategoryActions() {
     const { dispatch: searchDispatch, searchData } = useContext(SearchContext);
 
     async function getCategories() {
-        const response = await axios.get("http://localhost:8000/all")
+        const response = await axios.get("https://springboard-server.herokuapp.com/all")
         let data = response.data
         return data;
     }
