@@ -47,29 +47,34 @@ const ThreadResults: React.FC<Props> = ({ state, setState, recents, setRecents }
 
         var storedNames = await JSON.parse(localStorage.getItem("names") || '[]');
 
+        if (storedNames.length > 0) {
 
-        const some = (element: any) => element.title === match.params.category.toLowerCase();
+            const some = (element: any) => element.title === match.params.category.toLowerCase();
 
-        if (storedNames.some(some)) {
-            setRecents(storedNames)
-
-        } else {
-            setTimeout(async () => {
-                let recent = await fetchRecents(match.params.category)
-
-                storedNames.push(recent)
-
-                localStorage.setItem("names", JSON.stringify(storedNames));
+            if (storedNames.some(some)) {
                 setRecents(storedNames)
 
-            }, 1000);
+            } else {
+                setTimeout(async () => {
+                    let recent = await fetchRecents(match.params.category)
+
+                    storedNames.push(recent)
+
+                    localStorage.setItem("names", JSON.stringify(storedNames));
+                    setRecents(storedNames)
+
+                }, 1000);
+            }
+
+            console.log("storedddd", storedNames)
+
+
+        } else {
+
+            return;
+
         }
-
-        console.log("storedddd", storedNames)
-
-
     }
-
 
     useEffect(() => {
 
