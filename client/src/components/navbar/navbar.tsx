@@ -7,14 +7,51 @@ import { IoMdSearch } from 'react-icons/io';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { AiFillThunderbolt } from 'react-icons/ai';
 import { IoMdTrendingUp } from 'react-icons/io';
-import { GiBouncingSpring } from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import categoryActions from "../../actions/actions"
 import Loading from "../loading/navLoader"
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import clsx from 'clsx';
+import HomeIcon from '@material-ui/icons/Home';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from "@material-ui/core/Divider";
+
+
 
 
 interface Props {
 
 }
+
+const useStyles = makeStyles({
+    list: {
+        width: "200px",
+        display: "flex",
+
+        // backgroundColor: "rgb(248, 248, 248)",
+
+
+    },
+    fullList: {
+        width: '210px',
+        display: "flex",
+        backgroundColor: "rgb(248, 248, 248)",
+        background: "rgb(248, 248, 248)",
+        // padding: "10px",
+
+
+    },
+    paper: {
+        background: "rgb(248, 248, 248)",
+        width: "200px",
+        display: "flex",
+        fontWeight: "bold",
+    }
+
+});
 
 const Navbar: React.FC<Props> = ({ }) => {
 
@@ -24,14 +61,17 @@ const Navbar: React.FC<Props> = ({ }) => {
     const [trends, setTrends] = useState([])
     const [loading, setLoading] = useState(true)
     const [typing, setTyping] = useState(false)
+    const [state, setState] = useState(false)
     const history = useHistory();
-    const isMobile = window.innerWidth < 750
+    const isMobile = window.innerWidth < 801
+    const classes = useStyles();
 
     const home = () => {
         history.push({
             pathname: `/`,
 
         });
+        setState(false)
     }
 
     const handleThemeChange = () => {
@@ -88,11 +128,30 @@ const Navbar: React.FC<Props> = ({ }) => {
 
 
 
+
+
+
     return (
         <>
+            <React.Fragment >
+                <div>
+                    <Drawer classes={{ paper: classes.paper }} open={state} onClose={() => setState(false)}>
+
+                        <ListItem className={classes.fullList} button key="Test" onClick={home} >
+                            <ListItemIcon><HomeIcon style={{ color: "#d72e33" }} /></ListItemIcon>
+                            <ListItemText primary="Home" />
+                        </ListItem>
+
+
+                        <Divider />
+                    </Drawer>
+
+                </div>
+            </React.Fragment>
             <div className={`navbar-${themeData.theme}`}>
+
                 <div className="nav-left">
-                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }} onClick={home}><GiBouncingSpring /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboard</span>}
+                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }}><GiHamburgerMenu onClick={() => setState(true)} /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboard</span>}
 
                 </div>
                 <div className="nav-middle">
