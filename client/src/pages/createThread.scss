@@ -1,0 +1,75 @@
+.create-thread-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  //   height: 100vh;
+  //   background-color: orange;
+  .create-thread-header {
+    display: flex;
+    width: 90%;
+    // background-color: yellow;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.425);
+    h1 {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    }
+  }
+  .create-thread-modal-container {
+    display: flex;
+    // background-color: yellow;
+    width: 92%;
+  }
+  .create-thread-body {
+    display: flex;
+    background-color: red;
+    width: 90%;
+    textarea {
+      width: 100%;
+      min-width: 100%;
+      min-height: 250px;
+      outline: 1px solid grey;
+      border: none;
+      padding-left: 8px;
+      padding: 10px 15px 0px 12px;
+      //   border: 1px solid;
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      //   height: 30px;
+      resize: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: block;
+    }
+  }
+  .create-thread-title {
+    display: flex;
+    // background-color: red;
+    width: 90%;
+    margin-bottom: 40px;
+    display: block;
+
+    textarea {
+      width: 100%;
+      min-width: 100%;
+      //   min-height: 20px;
+      outline: 1px solid grey;
+      border: none;
+      //   padding-left: 8px;
+      padding: 10px 15px 0px 12px;
+      //   border: 1px solid;
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      //   height: 30px;
+      resize: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: block;
+      border-radius: 5px;
+      background-color: white;
+    }
+  }
+}
