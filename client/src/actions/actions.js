@@ -16,7 +16,7 @@ export default function CategoryActions() {
 
     async function createThread(payload) {
         await axios
-            .post("http://localhost:8000/createThread", {
+            .post("https://springboard-server.herokuapp.com/createThread", {
                 title: payload.title,
                 body: payload.body,
                 category: payload.category,
@@ -32,7 +32,7 @@ export default function CategoryActions() {
         try {
             console.log("fired", term)
 
-            const response = await axios.get("http://localhost:8000/fetchThreads", { params: { term: term } });
+            const response = await axios.get("https://springboard-server.herokuapp.com/fetchThreads", { params: { term: term } });
             let threads = response.data
 
             threadDispatch({ type: 'UPDATE_THREADS', threads: threads });
@@ -46,7 +46,7 @@ export default function CategoryActions() {
 
         try {
             console.log("IMAGE fired")
-            const response = await axios.get("http://localhost:8000/fetchCategoryImage", { params: { term: term } });
+            const response = await axios.get("https://springboard-server.herokuapp.com/fetchCategoryImage", { params: { term: term } });
             let header = response.data
             console.log("HEADER", header)
             return header
@@ -62,7 +62,7 @@ export default function CategoryActions() {
         try {
             console.log("fired term ", term)
 
-            const response = await axios.get("http://localhost:8000/fetchRecents", { params: { term: term } });
+            const response = await axios.get("https://springboard-server.herokuapp.com/fetchRecents", { params: { term: term } });
             let recents = response.data
             return recents
 
@@ -77,7 +77,7 @@ export default function CategoryActions() {
         try {
             console.log("FETCH THREAD FIRED", id)
 
-            const response = await axios.get("http://localhost:8000/fetchThread", { params: { id: id } });
+            const response = await axios.get("https://springboard-server.herokuapp.com/fetchThread", { params: { id: id } });
             let recents = response.data
             return recents
 
@@ -90,7 +90,7 @@ export default function CategoryActions() {
 
     async function createComment(payload) {
         await axios
-            .post("http://localhost:8000/createComment", {
+            .post("https://springboard-server.herokuapp.com/createComment", {
                 message: payload.comment,
                 thread_id: payload.thread_id
             })
@@ -103,7 +103,7 @@ export default function CategoryActions() {
 
     async function createReply(payload) {
         await axios
-            .post("http://localhost:8000/createReply", {
+            .post("https://springboard-server.herokuapp.com/createReply", {
                 message: payload.message,
                 comment_id: payload.comment_id,
                 id: payload.thread_id
@@ -124,7 +124,7 @@ export default function CategoryActions() {
         try {
             console.log("trending dropdown fired")
 
-            const response = await axios.get("http://localhost:8000/fetchTrends")
+            const response = await axios.get("https://springboard-server.herokuapp.com/fetchTrends")
             let trendings = response.data
             return trendings
 
@@ -140,7 +140,7 @@ export default function CategoryActions() {
         try {
             console.log("term", term)
 
-            const response = await axios.get("http://localhost:8000/search", { params: { term: term } });
+            const response = await axios.get("https://springboard-server.herokuapp.com/search", { params: { term: term } });
             searchDispatch({ type: 'SET_SEARCH_RESULTS', searchResults: response.data });
 
 
