@@ -39,6 +39,7 @@ const Dropdown: React.FC<Props> = ({ setOpen, setState, state }) => {
   const classes = useStyles();
   const history = useHistory();
   const { dispatch: themeDispatch, themeData } = useContext(ThemeContext);
+  const isMobile = window.innerWidth < 801
 
 
 
@@ -190,6 +191,16 @@ const Dropdown: React.FC<Props> = ({ setOpen, setState, state }) => {
 
   }
 
+
+
+  const handleCreateThread = () => {
+    if (isMobile) {
+      history.push({ pathname: "/submit" });
+    } else {
+      setOpen(true)
+    }
+  }
+
   return (
     <div className="dropdown-container">
       <FormControl className={classes.formControl}>
@@ -217,7 +228,7 @@ const Dropdown: React.FC<Props> = ({ setOpen, setState, state }) => {
 
         <FormHelperText style={{ color: themeData.theme === "dark" ? ' #c9d1d9' : "black" }}>Change Category</FormHelperText>
       </FormControl>
-      <button className="new-thread-button" onClick={() => setOpen(true)}>
+      <button className="new-thread-button" onClick={() => handleCreateThread()}>
         <GoPlus style={{ position: "relative", right: "4px" }} /> New Thread
     </button>
     </div>
