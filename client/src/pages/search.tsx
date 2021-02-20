@@ -55,7 +55,7 @@ const Search: React.FC<Props> = ({ }) => {
         // console.log("thread clicked", thread_id)
 
         console.log(e.target)
-        let url = `http://localhost:3000/t/${thread.thread_id}/${thread.thread_title}`
+        let url = `https://springboards.netlify.app/t/${thread.thread_id}/${thread.thread_title}`
         navigator.clipboard.writeText(url)
         setDropId("")
         searchDispatch({ type: 'CLOSE_DROPDOWN', id: thread.thread_id });
