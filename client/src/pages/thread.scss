@@ -2,11 +2,11 @@
 
 .current-thread-main-light {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 70%;
   max-width: 1200px;
   // background-color: red;
-  padding: 0px 5px;
+  padding: 5px 5px;
   .current-thread-main-left {
     display: flex;
     width: 65%;
@@ -175,12 +175,11 @@
 
 .current-thread-main-dark {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 70%;
   max-width: 1200px;
-  // background-color: red;
+  padding: 5px 5px;
 
-  padding: 0px 5px;
   .current-thread-main-left {
     display: flex;
     width: 65%;
