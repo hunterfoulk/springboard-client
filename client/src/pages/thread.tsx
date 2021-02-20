@@ -70,7 +70,8 @@ const Thread: React.FC<Props> = ({ recents, setRecents }) => {
     const handleCopyLink = () => {
 
 
-        let url = `http://localhost:3000/t/${match.params.thread_id}/${match.params.thread}`
+        let url = `https://springboards.netlify.app/t/${thread.thread_id}/${thread.thread_title}`
+
         navigator.clipboard.writeText(url)
         setShareDropdown(false)
     }

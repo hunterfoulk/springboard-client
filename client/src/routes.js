@@ -9,8 +9,8 @@ import ThreadModal from "./components/modal/modal"
 import Dropdown from "./components/dropdown/dropdown"
 import Thread from "./pages/thread"
 import Search from "./pages/search"
-import { ThemeContext } from "./context/contexts/themeContext"
 import CreateThread from "./pages/createThread"
+import { ThemeContext } from "./context/contexts/themeContext"
 
 function Routes() {
     const [open, setOpen] = useState(false)
@@ -26,7 +26,7 @@ function Routes() {
                 <Dropdown setOpen={setOpen} setState={setState} />
                 <ThreadModal open={open} setOpen={setOpen} />
                 < Switch >
-                    <Route path='/' component={Homepage} exactsetState={setState} />
+                    <Route path='/' component={Homepage} exact setState={setState} />
                     <Route path="/c/:category_id/:category" render={(props) => (
                         <ThreadResults {...props} setState={setState} state={state} recents={recents} setRecents={setRecents} />
                     )} exact />
