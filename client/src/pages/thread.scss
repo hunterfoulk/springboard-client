@@ -391,3 +391,46 @@
     }
   }
 }
+@media (max-width: 400px) {
+  .current-thread-main-dark {
+    // background-color: green;
+    width: 90%;
+    justify-content: center;
+    .current-thread-main-left {
+      width: 100%;
+      .current-thread {
+        .current-thread-header {
+          // background-color: orange;
+          // box-sizing: border-box;
+          .date {
+            font-size: 9.5px;
+          }
+        }
+      }
+    }
+    .current-thread-main-right {
+      display: none;
+    }
+  }
+
+  .current-thread-main-light {
+    // background-color: green;
+    width: 90%;
+
+    .current-thread-main-left {
+      width: 100%;
+      .current-thread {
+        .current-thread-header {
+          // background-color: orange;
+          // box-sizing: border-box;
+          .date {
+            font-size: 9.5px;
+          }
+        }
+      }
+    }
+    .current-thread-main-right {
+      display: none;
+    }
+  }
+}
