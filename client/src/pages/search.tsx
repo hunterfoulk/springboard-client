@@ -88,34 +88,45 @@ const Search: React.FC<Props> = ({ }) => {
 
             {loading ? <Loading /> :
                 <div className="search-main">
-                    {searchData.searchResults.map((thread: any, i: number) => (
-                        <div className={`thread-search-${themeData.theme}`} >
-                            <div className="user-container">
-                                <div className="image-container">
-                                    <img src={thread.image} />
-                                </div>
-                                <span  >Posted by <span >u/{thread.user}</span></span>
-                                <Moment fromNow className="date">{thread.date}</Moment>
-                            </div>
+                    {searchData.searchResults.length === 0 ? <span style={{ textAlign: "center" }}>no results found for "{match.params.term}"</span> :
 
-                            <div className="thread-title" onClick={() => handleThreadRoute(thread)}>
-                                <span>{thread.thread_title}</span>
-                            </div>
-                            <div className="thread-buttons">
-                                <FaCommentAlt style={{ position: "relative", top: "2px", color: "rgb(215, 46, 51)", marginRight: "3px" }} /><span style={{ fontSize: "14.5px", position: "relative", top: "0.5px" }}> {thread.comments.length}</span> <span style={{ marginLeft: "5px" }} onClick={() => handleThreadRoute(thread)}>Comments </span>
-                                <FaShare style={{ position: "relative", top: "2px", color: "rgb(215, 46, 51)", marginLeft: "20px", marginRight: "3px" }} /> <span onClick={() => handleShareToggle(thread, i)}>Share</span>
-                            </div>
-                            {thread.sharing && <div ref={ref} className="dropdown">
-                                <span className="copy-span" style={{ fontSize: "13px" }} onClick={(e) => handleCopyLink(e, thread)}>
-                                    <FaLink style={{ position: "relative", fontSize: "12px", top: "2px", right: "4px" }} /> Copy link
-                        </span>
-                                <span className="copy-span" style={{ fontSize: "13px" }} onClick={(e) => handleCloseDropdown(thread, i)}>
-                                    <FaTimesCircle style={{ position: "relative", fontSize: "12px", top: "2px", right: "12px" }} /> Cancel
-                        </span>
-                            </div>}
 
-                        </div>
-                    ))}
+                        <>
+                            {
+                                searchData.searchResults.map((thread: any, i: number) => (
+                                    <div className={`thread-search-${themeData.theme}`} >
+                                        <div className="user-container">
+                                            <div className="image-container">
+                                                <img src={thread.image} />
+                                            </div>
+                                            <span  >Posted by <span >u/{thread.user}</span></span>
+                                            <Moment fromNow className="date">{thread.date}</Moment>
+                                        </div>
+
+                                        <div className="thread-title" onClick={() => handleThreadRoute(thread)}>
+                                            <span>{thread.thread_title}</span>
+                                        </div>
+                                        <div className="thread-buttons">
+                                            <FaCommentAlt style={{ position: "relative", top: "2px", color: "rgb(215, 46, 51)", marginRight: "3px" }} /><span style={{ fontSize: "14.5px", position: "relative", top: "0.5px" }}> {thread.comments.length}</span> <span style={{ marginLeft: "5px" }} onClick={() => handleThreadRoute(thread)}>Comments </span>
+                                            <FaShare style={{ position: "relative", top: "2px", color: "rgb(215, 46, 51)", marginLeft: "20px", marginRight: "3px" }} /> <span onClick={() => handleShareToggle(thread, i)}>Share</span>
+                                        </div>
+                                        {thread.sharing && <div ref={ref} className="dropdown">
+                                            <span className="copy-span" style={{ fontSize: "13px" }} onClick={(e) => handleCopyLink(e, thread)}>
+                                                <FaLink style={{ position: "relative", fontSize: "12px", top: "2px", right: "4px" }} /> Copy link
+                        </span>
+                                            <span className="copy-span" style={{ fontSize: "13px" }} onClick={(e) => handleCloseDropdown(thread, i)}>
+                                                <FaTimesCircle style={{ position: "relative", fontSize: "12px", top: "2px", right: "12px" }} /> Cancel
+                        </span>
+                                        </div>}
+
+                                    </div>
+                                ))
+                            }
+                        </>
+                    }
+
+
+
                 </div>}
 
         </>
