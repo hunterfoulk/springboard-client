@@ -26,7 +26,7 @@ function Routes() {
                 <Dropdown setOpen={setOpen} setState={setState} />
                 <ThreadModal open={open} setOpen={setOpen} />
                 < Switch >
-                    <Route path='/' component={Homepage} exact setState={setState} />
+                    <Route path='/' component={Homepage} exactsetState={setState} />
                     <Route path="/c/:category_id/:category" render={(props) => (
                         <ThreadResults {...props} setState={setState} state={state} recents={recents} setRecents={setRecents} />
                     )} exact />
