@@ -1,12 +1,14 @@
-.create-thread-main {
+.create-thread-main-light {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  //   height: 100vh;
+  // height: 100%;
   //   background-color: orange;
+  height: 100vh;
+  // overflow-y: hidden;
   .create-thread-header {
     display: flex;
     width: 90%;
@@ -25,7 +27,7 @@
   }
   .create-thread-body {
     display: flex;
-    // background-color: red;
+    background-color: red;
     width: 90%;
     textarea {
       width: 100%;
@@ -70,6 +72,90 @@
       display: block;
       border-radius: 5px;
       background-color: white;
+    }
+  }
+}
+
+.create-thread-main-dark {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  // height: 100%;
+  //   background-color: orange;
+  height: 100vh;
+  // overflow-y: hidden;
+  .create-thread-header {
+    display: flex;
+    width: 90%;
+    color: #a2a6aa;
+
+    // background-color: yellow;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.425);
+    h1 {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    }
+  }
+  .create-thread-modal-container {
+    display: flex;
+    // background-color: yellow;
+    width: 92%;
+  }
+  .create-thread-body {
+    display: flex;
+    // background-color: red;
+    width: 90%;
+    textarea {
+      width: 100%;
+      min-width: 100%;
+      min-height: 250px;
+      outline: 1px solid grey;
+      border: none;
+      padding-left: 8px;
+      padding: 10px 15px 0px 12px;
+      //   border: 1px solid;
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      //   height: 30px;
+      resize: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: block;
+      color: #a2a6aa;
+      background-color: #1a1a1b;
+    }
+  }
+  .create-thread-title {
+    display: flex;
+    // background-color: red;
+    width: 90%;
+    margin-bottom: 40px;
+    display: block;
+
+    textarea {
+      width: 100%;
+      min-width: 100%;
+      color: #a2a6aa;
+
+      //   min-height: 20px;
+      outline: 1px solid grey;
+      border: none;
+      //   padding-left: 8px;
+      padding: 10px 15px 0px 12px;
+      //   border: 1px solid;
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      //   height: 30px;
+      resize: none;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: block;
+      border-radius: 5px;
+      background-color: #1a1a1b;
     }
   }
 }

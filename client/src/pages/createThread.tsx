@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import "./createThread.scss"
 import ModalDropdown from "../components/modal/modalDropdown"
 import categoryActions from "../actions/actions"
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import { ThemeContext } from "../context/contexts/themeContext"
 
 interface Props {
 
@@ -14,6 +15,7 @@ const CreateThread: React.FC<Props> = ({ }) => {
     const [category, setCategory] = useState<string>("none")
     const [title, setTitle] = useState<string>("")
     const [body, setBody] = useState<string>("")
+    const { dispatch: themeDispatch, themeData } = useContext(ThemeContext);
 
     const handleCreate = async () => {
         console.log("title", title)
@@ -45,7 +47,7 @@ const CreateThread: React.FC<Props> = ({ }) => {
 
     return (
         <>
-            <div className="create-thread-main">
+            <div className={`create-thread-main-${themeData.theme}`}>
 
 
                 <div className="create-thread-header">

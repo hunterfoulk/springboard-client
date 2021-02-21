@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -7,6 +7,7 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { GoPlus } from 'react-icons/go';
 import "../modal/modal.scss"
+import { ThemeContext } from "../../context/contexts/themeContext"
 
 interface Props {
     category: string
@@ -14,15 +15,19 @@ interface Props {
 
 }
 
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
             margin: theme.spacing(1),
             minWidth: 160,
+            color: "red"
 
         },
         selectEmpty: {
             marginTop: theme.spacing(2),
+
+
         },
     }),
 );
@@ -46,7 +51,7 @@ const Dropdown: React.FC<Props> = ({ category, setCategory }) => {
                 <NativeSelect
                     value={category}
                     onChange={handleChange}
-                    className={classes.selectEmpty}
+                    // className={classes.selectEmpty}
                     inputProps={{ 'aria-label': 'age' }}
                 >
                     <option value={0}>None</option>
@@ -58,6 +63,8 @@ const Dropdown: React.FC<Props> = ({ category, setCategory }) => {
                     <option value={5}>Books</option>
                     <option value={8}>Programming</option>
                     <option value={9}>Art</option>
+                    <option value={10}>Gaming</option>
+                    <option value={11}>Sports</option>
 
                 </NativeSelect>
                 <FormHelperText>Change Category</FormHelperText>
