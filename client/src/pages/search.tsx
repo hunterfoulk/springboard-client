@@ -52,7 +52,6 @@ const Search: React.FC<Props> = ({ }) => {
 
 
     const handleCopyLink = (e: any, thread: any) => {
-        // console.log("thread clicked", thread_id)
 
         console.log(e.target)
         let url = `https://springboards.netlify.app/t/${thread.thread_id}/${thread.thread_title}`
