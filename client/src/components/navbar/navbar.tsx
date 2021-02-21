@@ -49,7 +49,7 @@ const useStyles = makeStyles({
         background: "rgb(248, 248, 248)",
         width: "200px",
         display: "flex",
-        fontWeight: "bold",
+        // borderRight: "4px solid rgb(215, 46, 51)"
 
     }
 
@@ -140,12 +140,13 @@ const Navbar: React.FC<Props> = ({ }) => {
                     <Drawer classes={{ paper: classes.paper }} open={state} onClose={() => setState(false)}>
 
                         <ListItem className={classes.fullList} button key="Test" onClick={home} >
-                            <ListItemIcon><HomeIcon style={{ color: "#d72e33" }} /></ListItemIcon>
-                            <ListItemText primary="Home" />
+                            <ListItemIcon><HomeIcon style={{ color: "#d72e33", fontSize: "28px" }} /></ListItemIcon>
+                            {/* <ListItemText primary="Home" /> */}
+                            <span style={{ color: "#d72e33", fontSize: "20px" }}>Home</span>
                         </ListItem>
 
 
-                        <Divider />
+                        {/* <Divider /> */}
                     </Drawer>
 
                 </div>
@@ -153,7 +154,7 @@ const Navbar: React.FC<Props> = ({ }) => {
             <div className={`navbar-${themeData.theme}`}>
 
                 <div className="nav-left">
-                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }}><GiHamburgerMenu onClick={() => setState(true)} /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboards</span>}
+                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }}><GiHamburgerMenu onClick={() => setState(true)} /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboard</span>}
 
                 </div>
                 <div className="nav-middle">
