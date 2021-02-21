@@ -154,7 +154,7 @@ const Navbar: React.FC<Props> = ({ }) => {
             <div className={`navbar-${themeData.theme}`}>
 
                 <div className="nav-left">
-                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }}><GiHamburgerMenu onClick={() => setState(true)} /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboard</span>}
+                    {isMobile ? <span style={{ cursor: "pointer", fontSize: "35px", marginLeft: "15px", position: "relative", top: "2px", left: "5px" }}><GiHamburgerMenu onClick={() => setState(true)} /></span> : <span style={{ cursor: "pointer", marginLeft: "15px" }} onClick={home}>Springboards</span>}
 
                 </div>
                 <div className="nav-middle">
