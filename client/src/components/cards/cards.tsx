@@ -65,7 +65,7 @@ const Card: React.FC<Props> = ({ card, setState }) => {
 
                         {card.threads.length === 0 ? <span className="no-threads">No threads currently posted.</span> :
                             card.threads.map((thread) => {
-                                card.threads.length = 3
+                                card.threads.length = 4
                                 const output = thread.thread_title.split('', 26).reduce((o, c) => o.length === 25 ? `${o}${c}...` : `${o}${c}`, '')
                                 return (
                                     <div className="recent-thread">

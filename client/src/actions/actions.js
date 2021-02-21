@@ -2,21 +2,30 @@ import axios from "axios";
 import { ThreadContext } from "../context/contexts/threadContext";
 import { SearchContext } from "../context/contexts/searchContext";
 import { useContext } from 'react';
+require("dotenv").config();
 
 
 export default function CategoryActions() {
     const { dispatch: threadDispatch, threadData } = useContext(ThreadContext);
     const { dispatch: searchDispatch, searchData } = useContext(SearchContext);
 
+    let headers = {};
+    const baseURL = process.env.REACT_APP_BACKEND_URL;
+    const API = axios.create({
+        baseURL: baseURL,
+        headers
+    });
+
+
     async function getCategories() {
-        const response = await axios.get("https://springboard-server.herokuapp.com/all")
+        const response = await API.get("/all")
         let data = response.data
         return data;
     }
 
     async function createThread(payload) {
-        await axios
-            .post("https://springboard-server.herokuapp.com/createThread", {
+        await API
+            .post('/createThread', {
                 title: payload.title,
                 body: payload.body,
                 category: payload.category,
@@ -30,9 +39,9 @@ export default function CategoryActions() {
     async function fetchThreads(term) {
 
         try {
-            console.log("fired", term)
+            console.log("firedddddddd", term)
 
-            const response = await axios.get("https://springboard-server.herokuapp.com/fetchThreads", { params: { term: term } });
+            const response = await API.get('/fetchThreads', { params: { term: term } });
             let threads = response.data
 
             threadDispatch({ type: 'UPDATE_THREADS', threads: threads });
@@ -46,7 +55,7 @@ export default function CategoryActions() {
 
         try {
             console.log("IMAGE fired")
-            const response = await axios.get("https://springboard-server.herokuapp.com/fetchCategoryImage", { params: { term: term } });
+            const response = await API.get('/fetchCategoryImage', { params: { term: term } });
             let header = response.data
             console.log("HEADER", header)
             return header
@@ -62,7 +71,7 @@ export default function CategoryActions() {
         try {
             console.log("fired term ", term)
 
-            const response = await axios.get("https://springboard-server.herokuapp.com/fetchRecents", { params: { term: term } });
+            const response = await API.get('/fetchRecents', { params: { term: term } });
             let recents = response.data
             return recents
 
@@ -77,7 +86,7 @@ export default function CategoryActions() {
         try {
             console.log("FETCH THREAD FIRED", id)
 
-            const response = await axios.get("https://springboard-server.herokuapp.com/fetchThread", { params: { id: id } });
+            const response = await API.get('/fetchThread', { params: { id: id } });
             let recents = response.data
             return recents
 
@@ -89,8 +98,8 @@ export default function CategoryActions() {
 
 
     async function createComment(payload) {
-        await axios
-            .post("https://springboard-server.herokuapp.com/createComment", {
+        await API
+            .post('/createComment', {
                 message: payload.comment,
                 thread_id: payload.thread_id
             })
@@ -103,13 +112,12 @@ export default function CategoryActions() {
 
     async function createReply(payload) {
         await axios
-            .post("https://springboard-server.herokuapp.com/createReply", {
+            .post('/createReply', {
                 message: payload.message,
                 comment_id: payload.comment_id,
                 id: payload.thread_id
             })
             .then((res) => {
-                // console.log("comment created!");
                 console.log("new comments", res.data.comments)
                 threadDispatch({ type: 'SET_COMMENTS', comments: res.data.comments })
 
@@ -124,7 +132,7 @@ export default function CategoryActions() {
         try {
             console.log("trending dropdown fired")
 
-            const response = await axios.get("https://springboard-server.herokuapp.com/fetchTrends")
+            const response = await API.get("/fetchTrends")
             let trendings = response.data
             return trendings
 
@@ -140,7 +148,7 @@ export default function CategoryActions() {
         try {
             console.log("term", term)
 
-            const response = await axios.get("https://springboard-server.herokuapp.com/search", { params: { term: term } });
+            const response = await API.get("/search", { params: { term: term } });
             searchDispatch({ type: 'SET_SEARCH_RESULTS', searchResults: response.data });
 
 
