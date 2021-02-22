@@ -193,12 +193,11 @@ const Dropdown: React.FC<Props> = ({ setOpen, setState, state }) => {
 
 
 
+
   const handleCreateThread = () => {
-    if (isMobile) {
-      history.push({ pathname: "/submit" });
-    } else {
-      setOpen(true)
-    }
+
+    history.push({ pathname: "/submit" });
+
   }
 
   return (

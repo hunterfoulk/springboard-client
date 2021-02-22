@@ -4,7 +4,7 @@
   // justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   // height: 100%;
   //   background-color: orange;
   height: 100vh;
@@ -32,10 +32,11 @@
     textarea {
       width: 100%;
       min-width: 100%;
-      min-height: 250px;
+      min-height: 300px;
       outline: 1px solid grey;
       border: none;
       padding-left: 8px;
+      // background-color: red;
       padding: 10px 15px 0px 12px;
       //   border: 1px solid;
       overflow-x: hidden;
@@ -74,6 +75,26 @@
       background-color: white;
     }
   }
+  .new-thread-button-container {
+    display: flex;
+    width: 93%;
+    // background-color: red;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 15px 0px 12px;
+
+    //   border: 1px solid;
+    overflow-x: hidden;
+    // overflow-wrap: break-word;
+    //   height: 30px;
+
+    box-sizing: border-box;
+
+    // display: block;
+    button {
+      // margin-right: 10px;
+    }
+  }
 }
 
 .create-thread-main-dark {
@@ -82,7 +103,7 @@
   // justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   // height: 100%;
   //   background-color: orange;
   height: 100vh;
@@ -112,7 +133,7 @@
     textarea {
       width: 100%;
       min-width: 100%;
-      min-height: 250px;
+      min-height: 300px;
       outline: 1px solid grey;
       border: none;
       padding-left: 8px;
@@ -156,6 +177,26 @@
       display: block;
       border-radius: 5px;
       background-color: #1a1a1b;
+    }
+  }
+  .new-thread-button-container {
+    display: flex;
+    width: 93%;
+    // background-color: red;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 15px 0px 12px;
+
+    //   border: 1px solid;
+    overflow-x: hidden;
+    // overflow-wrap: break-word;
+    //   height: 30px;
+
+    box-sizing: border-box;
+
+    // display: block;
+    button {
+      // margin-right: 10px;
     }
   }
 }
