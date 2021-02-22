@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         selectEmpty: {
             marginTop: theme.spacing(2),
+            color: "red"
 
 
         },
@@ -52,7 +53,7 @@ const Dropdown: React.FC<Props> = ({ category, setCategory }) => {
                 <NativeSelect
                     value={category}
                     onChange={handleChange}
-                    className={`create-modal-${themeData.theme}`}
+                    style={{ color: "#a2a6aa" }}
                     inputProps={{ 'aria-label': 'age' }}
                 >
                     <option value={0}>None</option>
@@ -68,7 +69,7 @@ const Dropdown: React.FC<Props> = ({ category, setCategory }) => {
                     <option value={11}>Sports</option>
 
                 </NativeSelect>
-                <FormHelperText className={`create-modal-${themeData.theme}`}>Change Category</FormHelperText>
+                <FormHelperText style={{ color: "#a2a6aa" }}>Change Category</FormHelperText>
             </FormControl>
         </div>
     );
